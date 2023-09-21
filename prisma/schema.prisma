@@ -13,7 +13,8 @@ model Post {
   title    String
   body     String
   author   User      @relation(fields: [authorId], references: [id])
-  authorId String    
+  authorId String
+  createdAt DateTime @default(now())    
   comments Comment[]
 }
 
@@ -22,6 +23,7 @@ model User {
   email   String   @unique
   name    String?
   address String
+  createdAt DateTime @default(now())
   posts   Post[]
 }
 
@@ -29,5 +31,6 @@ model Comment {
   id      String @id @default(uuid()) @map("_id")
   comment String
   post    Post   @relation(fields: [postId], references: [id])
-  postId  String 
+  postId  String
+  createdAt DateTime @default(now()) 
 }

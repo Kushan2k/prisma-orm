@@ -1,0 +1,20 @@
+POST http://localhost:9090/api/v1/user/add/many
+Content-Type: application/json
+
+[
+  {
+  "email":"kg123@gmail.com",
+  "name":"david",
+  "address":"new york"
+},
+  {
+  "email":"testone@gmail.com",
+  "name":"john doe",
+  "address":"colombo 05"
+},
+  {
+  "email":"therock@gmail.com",
+  "name":"the Rock",
+  "address":"new jersey"
+}
+]
