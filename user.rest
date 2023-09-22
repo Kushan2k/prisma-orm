@@ -1,3 +1,17 @@
+
+//get all users
+GET http://localhost:9090/api/v1/user/all
+Accept: application/json
+
+
+###
+
+DELETE http://localhost:9090/api/v1/user/delete/e078e96d-c77e-4780-a29c-a2934b664118
+
+
+###
+
+//add users
 POST http://localhost:9090/api/v1/user/add/many
 Content-Type: application/json
 

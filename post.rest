@@ -1,0 +1,15 @@
+//get all posts
+GET http://localhost:9090/api/v1/post/all
+Accept: application/json
+
+###
+
+POST http://localhost:9090/api/v1/post/create
+Content-Type: application/json
+
+{
+  "slug":"test post",
+  "title":"my first post",
+  "body":"hello world i'm new here",
+  "authorId":"e078e96d-c77e-4780-a29c-a2934b664118"
+}
