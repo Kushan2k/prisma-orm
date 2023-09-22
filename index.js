@@ -6,9 +6,11 @@ const { prisma } = require("./includes.js")
 const { authRouter } = require("./routes/auth.js")
 const checkauth = require("./middlewares/checkauth.js")
 require("dotenv").config()
+const cors = require("cors")
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 const PORT = process.env.PORT || 9091
 
