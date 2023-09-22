@@ -1,8 +1,10 @@
 const express = require("express")
-const { PrismaClient } = require("@prisma/client")
+
 const { userRouter } = require("./routes/user.js")
 const { postRouter } = require("./routes/post.js")
 const { prisma } = require("./includes.js")
+const { authRouter } = require("./routes/auth.js")
+const checkauth = require("./middlewares/checkauth.js")
 require("dotenv").config()
 
 const app = express()
@@ -31,7 +33,8 @@ app.get("/", async function (req, res) {
   }
 })
 
-app.use("/api/v1/post", postRouter)
-app.use("/api/v1/user", userRouter)
+app.use("/auth", authRouter)
+app.use("/api/v1/post", checkauth, postRouter)
+app.use("/api/v1/user", checkauth, userRouter)
 
 app.listen(PORT)

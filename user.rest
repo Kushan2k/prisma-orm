@@ -32,3 +32,15 @@ Content-Type: application/json
   "address":"new jersey"
 }
 ]
+
+###
+//register user
+POST http://localhost:9090/auth/register
+Content-Type: application/json
+
+{
+  "name":"kushan2k",
+  "email":"kushangayantha12345@gmail.com",
+  "password":"kushan2k12345",
+  "address":"kurunegala"
+}

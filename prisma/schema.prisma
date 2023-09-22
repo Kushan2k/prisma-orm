@@ -23,6 +23,7 @@ model User {
   email   String   @unique
   name    String?
   address String
+  password String
   createdAt DateTime @default(now())
   posts   Post[]
 }

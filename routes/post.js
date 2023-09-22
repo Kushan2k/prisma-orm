@@ -31,6 +31,8 @@ postRouter.get("/all", async function (req, res) {
 postRouter.post("/create", async function (req, res) {
   const d = req.body
 
+  d.authorId = req.user.id
+
   try {
     const post = await prisma.post.create({
       data: d,
