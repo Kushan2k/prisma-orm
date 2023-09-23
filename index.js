@@ -7,6 +7,7 @@ const { authRouter } = require("./routes/auth.js")
 const checkauth = require("./middlewares/checkauth.js")
 require("dotenv").config()
 const cors = require("cors")
+const { commentRouter } = require("./routes/comment.js")
 
 const app = express()
 app.use(express.json())
@@ -38,5 +39,6 @@ app.get("/", async function (req, res) {
 app.use("/auth", authRouter)
 app.use("/api/v1/post", checkauth, postRouter)
 app.use("/api/v1/user", checkauth, userRouter)
+app.use("/api/v1/comment", checkauth, commentRouter)
 
 app.listen(PORT)

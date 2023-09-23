@@ -1,0 +1,15 @@
+GET http://localhost:9090/api/v1/comment/0e59aad6-fee0-4a12-b9ae-ae9f8b09aa08
+Accept: application/json
+
+###
+
+POST http://localhost:9090/api/v1/comment/add
+Content-Type: application/json
+
+{
+  "comment":"nice post thatk you for posting",
+  "postId":"0e59aad6-fee0-4a12-b9ae-ae9f8b09aa08"
+}
+
+###
+GET http://localhost:9090/api/v1/comment/dab3371a-7384-4966-ae8c-7882360d67b0
